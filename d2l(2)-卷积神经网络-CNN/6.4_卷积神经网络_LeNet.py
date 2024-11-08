@@ -10,6 +10,7 @@ net = nn.Sequential(
     nn.AvgPool2d(kernel_size=2, stride=2),
     nn.Conv2d(6, 16, kernel_size=5), nn.Sigmoid(),
     nn.AvgPool2d(kernel_size=2, stride=2),
+    # 将处理后的数据拉成一维，丢入【全连接】层
     nn.Flatten(),
     nn.Linear(16 * 5 * 5, 120), nn.Sigmoid(),
     nn.Linear(120, 84), nn.Sigmoid(),
